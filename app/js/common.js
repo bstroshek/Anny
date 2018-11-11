@@ -1,19 +1,19 @@
-$(function() {
+$(function () {
 
     // Ajax form
 
-    $('.header-form').submit(function() {
+    $('.header-form').submit(function () {
         var th = $(this);
         $.ajax({
             type: "POST",
             url: "mail.php",
             data: th.serialize()
-        }).done(function() {
-            setTimeout(function() {
+        }).done(function () {
+            setTimeout(function () {
                 $.fancybox.open('<div class="success-message"><div class="message-heading"><p>Спасибо!</p></div><div class="message-text"><p>Мы Вам перезвоним!</p></div></div>');
                 th.trigger("reset");
             }, 1000);
-            setTimeout(function() {
+            setTimeout(function () {
                 th.trigger("reset");
             }, 5000);
         });
@@ -76,16 +76,34 @@ $(function() {
     });
 
 
+    function offScroll() {
+        document.body.style.overflow = "hidden";
+        this.onmouseout = function () {
+            document.body.style.overflow = "auto";
+        };
+    }
 
 
+    $('.portfolio-slider').mousewheel(function(e) {
+        e.preventDefault();
+
+        if (e.deltaY < 0) {
+            $(this).slick('slickNext');
+        } else {
+            $(this).slick('slickPrev');
+        }
+    });
+
+  /*  portfolioSlider.addEventListener('mouseover', function () {
+        offScroll();
+    });
 
 
+    portfolioSlider.addEventListener('scroll',function () {
 
+    });
 
-
-
-
-
+*/
 
 
 
@@ -94,8 +112,6 @@ $(function() {
     // }).on('mouseleave',  function(){
     //     $("body").css("overflow","auto");
     // });
-
-
 
     // $('#div').bind('mousewheel DOMMouseScroll', function(e) {
     //     var scrollTo = null;
@@ -121,7 +137,6 @@ $(function() {
     })
         .setPin("#my-sticky-element") // pins the element for the the scene's duration
         .addTo(controller); // assign the scene to the controller
-
 
 
 });
