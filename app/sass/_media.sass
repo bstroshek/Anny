@@ -1,0 +1,269 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+  .banner__pic
+    width: 60%
+    height: auto
+    bottom: 5px
+
+
+  .examples-list__item
+    .picture
+      width: 100%
+      height: auto
+  .examples-list__full
+    .picture
+      width: auto
+  .examples-list__mobile
+    .picture
+      width: 70%
+      height: 275px
+
+
+  .scheme__lg
+    img
+      width: 100%
+      height: auto
+
+
+  .map .balloon
+    left: 135px
+
+
+
+
+
+// ≥992px
++media-breakpoint-down(md)
+
+  .banner__text
+    width: 100%
+    justify-content: flex-start
+  .banner__text .accent-term
+    right: 0
+    top: 33px
+  .banner .h1
+    margin-top: 70px
+
+
+  .services__top-box
+    flex-direction: column
+  .services__circles
+    width: 100%
+    margin-top: 1px
+  .services .banner
+    background-size: 100% 100%
+  .services .banner__inner
+    height: 340px
+  .services .banner__pic
+    bottom: 0
+  .services .banner__text .accent-term
+    margin: 20px 0 0
+  .services .banner .h1
+    margin-bottom: 20px
+
+
+  .examples-list__full
+    .picture
+      width: 50%
+  .examples-list__shop .picture
+    margin-top: -76px
+  .examples-list__mobile .picture
+    height: 198px
+
+
+  .steps
+    background-size: cover
+  .steps-list
+    flex-direction: column
+    .steps-item
+      flex-direction: row
+      display: flex
+      width: 100%
+      align-items: flex-start
+      margin-bottom: 40px
+    .steps-item__top
+      flex-direction: column
+      margin-bottom: 0
+      margin-right: 30px
+      position: relative
+      .numb
+        z-index: 10
+      .steps-line
+        transform: rotate(90deg)
+        width: 290px
+        top: auto
+        bottom: -80px
+        margin: 0
+        position: absolute
+        z-index: 1
+  .steps-item__description
+    padding-top: 20px
+
+
+  .map .balloon
+    left: 0px
+  .map__card
+    padding-left: 15px
+  .map__card-info-r
+    display: block
+
+
+
+
+
+
+
+
+
+// ≥768px
++media-breakpoint-down(sm)
+
+  body
+    font-size: 14px
+
+  .main-line__box
+    flex-direction: column
+  .main-line__box__logo
+    margin-bottom: 20px
+  .main-line__box__last
+    flex-direction: column
+  .main-line__phone
+    margin-right: 0
+
+  .banner__pic
+    width: 70%
+
+
+  .services .banner__pic
+    width: 60%
+  .services .banner__inner
+    padding-left: 30px
+
+
+  .examples-list
+    flex-direction: column
+    margin-top: 30px
+  .examples-list__item
+    width: 100%
+    height: auto
+    .picture
+      margin: 0
+
+
+  .services
+    padding: 70px 0
+  .examples-list__pic-bottom .picture
+    margin-bottom: 0
+  .examples-list__full
+    flex-direction: column
+    height: auto
+    padding-top: 40px
+    .examples-list__text
+      width: 100%
+    .picture
+      width: 100%
+
+  .examples-list__pic-bottom
+    padding-top: 40px
+
+
+  .steps
+    padding: 70px 0
+    .section-heading
+      margin-bottom: 35px
+
+
+
+  .team
+    padding: 70px 0
+    .section-heading
+      margin-bottom: 50px
+  .persons-photo
+    margin-bottom: 20px
+    img
+      width: 100%
+      height: auto
+  .persons .slick-dots
+    margin-top: 40px
+  .slider .slick-dots
+    width: 80%
+
+
+
+
+
+
+
+
+
+
+
+
+// ≥576px
++media-breakpoint-down(xs)
+
+  .banner__pic
+    width: 90%
+
+
+
+
+
+
+
+@media (max-width: 480px)
+
+
+  .banner__pic
+    width: 100%
+
+  .services__circles
+    flex-wrap: wrap
+    justify-content: space-around
+
+  .steps-item__description .h4
+    font-size: 20px
+  .steps-list .steps-item
+    margin-bottom: 20px
+  .steps-list .steps-item__top .steps-line
+    bottom: -114px
+
+
+  .map__card
+    width: 100%
+    top: -957px
+
+
+@media (max-width: 360px)
+
+  .services .banner__inner
+    padding: 0 30px
+    .btn
+      width: 100%
+
+
+
+
+
+
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
