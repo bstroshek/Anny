@@ -56,6 +56,7 @@ $(function () {
     // Porfolio slider
     $('.portfolio-slider').slick({
         slidesToShow: 3,
+        infinite: false,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
