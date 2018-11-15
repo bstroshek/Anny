@@ -2,7 +2,7 @@ $(function () {
 
     // Ajax form
 
-    $('.header-form').submit(function () {
+    $('.popup-form').submit(function () {
         var th = $(this);
         $.ajax({
             type: "POST",
@@ -11,11 +11,14 @@ $(function () {
         }).done(function () {
             setTimeout(function () {
                 $.fancybox.open('<div class="success-message"><div class="message-heading"><p>Спасибо!</p></div><div class="message-text"><p>Мы Вам перезвоним!</p></div></div>');
-                th.trigger("reset");
             }, 1000);
             setTimeout(function () {
                 th.trigger("reset");
-            }, 5000);
+            }, 1000);
+            setTimeout(function () {
+                $.fancybox.close();
+                $.fancybox.close();
+            }, 4000);
         });
         return false;
     });
@@ -36,9 +39,8 @@ $(function () {
         slidesToScroll: 3,
         arrows: false,
         dots: true,
-        // centerMode: true,
+        infinite: false,
         variableWidth: true,
-        // centerPadding: '60px',
         responsive: [
             {
                 breakpoint: 768,
@@ -51,93 +53,154 @@ $(function () {
             }
         ]
     });
+    $('.persons').mousewheel(function(e) {
+        if (e.deltaY < 0) {
+            if($(this).slick('slickCurrentSlide') == $(this).find('.slide').length - 1) {
+                return
+            }
+
+            e.preventDefault()
+            $(this).slick('slickNext')
+        } else {
+            if($(this).slick('slickCurrentSlide') == 0) {
+                return
+            }
+
+            e.preventDefault()
+            $(this).slick('slickPrev')
 
 
-    // Porfolio slider
+        }
+    });
+
+
+
+    // Portfolio slider
     $('.portfolio-slider').slick({
         slidesToShow: 3,
         infinite: false,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        centerMode: true,
+        centerMode: false,
         variableWidth: true,
-        centerPadding: '80px',
+        centerPadding: '0',
         responsive: [
             {
                 breakpoint: 768,
                 settings: {
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 3,
+                    centerMode: false,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                 }
             }
         ]
     });
-
-
-    function offScroll() {
-        document.body.style.overflow = "hidden";
-        this.onmouseout = function () {
-            document.body.style.overflow = "auto";
-        };
-    }
-
-
     $('.portfolio-slider').mousewheel(function(e) {
-        e.preventDefault();
-
         if (e.deltaY < 0) {
-            $(this).slick('slickNext');
+            if($(this).slick('slickCurrentSlide') == $(this).find('.slide').length - 1) {
+                return
+            }
+
+            e.preventDefault()
+            $(this).slick('slickNext')
         } else {
-            $(this).slick('slickPrev');
+            if($(this).slick('slickCurrentSlide') == 0) {
+                return
+            }
+
+            e.preventDefault()
+            $(this).slick('slickPrev')
         }
     });
 
-  /*  portfolioSlider.addEventListener('mouseover', function () {
-        offScroll();
+
+
+
+    // Features slider
+    $('.features-slider').slick({
+        slidesToShow: 1,
+        infinite: false,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        vertical: true,
     });
 
 
-    portfolioSlider.addEventListener('scroll',function () {
 
+    $('.features-slider').mousewheel(function(e) {
+        if (e.deltaY < 0) {
+            if($(this).slick('slickCurrentSlide') == $(this).find('.slide').length - 1) {
+                return
+            }
+
+            e.preventDefault()
+            $(this).slick('slickNext')
+        } else {
+            if($(this).slick('slickCurrentSlide') == 0) {
+                return
+            }
+
+            e.preventDefault()
+            $(this).slick('slickPrev')
+
+
+        }
     });
 
-*/
-
-
-
-    // $('#div').on('mouseenter', function (event) {
-    //     $("body").css("overflow","hidden");
-    // }).on('mouseleave',  function(){
-    //     $("body").css("overflow","auto");
-    // });
-
-    // $('#div').bind('mousewheel DOMMouseScroll', function(e) {
-    //     var scrollTo = null;
-    //     if (e.type == 'mousewheel') {
-    //         scrollTo = (e.originalEvent.wheelDelta * -1);
+    // $('.features-slider').mousewheel(function(e) {
+    //     if (e.deltaY < 0) {
+    //
+    //
+    //         e.preventDefault()
+    //         $(this).find('.slick-slide').removeClass("slick-somth-out")
+    //         $(this).find('.slick-active').addClass("slick-somth-in")
     //     }
-    //     else if (e.type == 'DOMMouseScroll') {
-    //         scrollTo = 40 * e.originalEvent.detail;
-    //     }
-    //     if (scrollTo) {
-    //         e.preventDefault();
-    //         $(this).scrollTop(scrollTo + $(this).scrollTop());
+    //     else{
+    //         $(this).find('.slick-slide').removeClass("slick-somth-in")
+    //         $(this).find('.slick-active').addClass("slick-somth-out")
+    //
     //     }
     // });
 
-    // init controller
-    var controller = new ScrollMagic.Controller();
+    // $('.features-slider').find('.slick-slide').removeClass("slick-somth");
+    // $('.features-slider').find('.slick-active').addClass("slick-somth");
 
-    // create a scene
-    new ScrollMagic.Scene({
-        duration: 100,	// the scene should last for a scroll distance of 100px
-        offset: 50	// start this scene after scrolling for 50px
-    })
-        .setPin("#my-sticky-element") // pins the element for the the scene's duration
-        .addTo(controller); // assign the scene to the controller
+
+
+
+
+    // function offScroll() {
+    //     document.body.style.overflow = "hidden";
+    //     this.onmouseout = function () {
+    //         document.body.style.overflow = "auto";
+    //     };
+    // }
+
+
+    // $('.portfolio-slider').mousewheel(function(e) {
+    //     e.preventDefault();
+    //
+    //     if (e.deltaY < 0) {
+    //         $(this).slick('slickNext');
+    //     } else {
+    //         $(this).slick('slickPrev');
+    //     }
+    // });
+
+
+    // $('.features-slider').mousewheel(function(e) {
+    //     e.preventDefault();
+    //
+    //     if (e.deltaY < 0) {
+    //         $(this).slick('slickNext');
+    //     } else {
+    //         $(this).slick('slickPrev');
+    //     }
+    // });
 
 
 });
+
+
