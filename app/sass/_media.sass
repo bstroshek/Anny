@@ -6,15 +6,9 @@
 // ≥1200px
 +media-breakpoint-down(lg)
 
-  .banner
-    background-size: cover
-  .banner__inner
-    height: 500px
-
   .banner__pic
-    width: 60%
-    height: auto
-    bottom: 5px
+    width: 67%
+    bottom: 71px
 
 
   .services
@@ -23,15 +17,38 @@
 
   .examples-list__item
     .picture
-      width: 100%
+      max-width: 100%
+      display: block
       height: auto
+  .examples-list__corporate
+    .picture
+      left: 20px
+      bottom: -77px
+  .examples-list__landing
+    .picture
+      margin-left: 18px
+
   .examples-list__full
     .picture
       width: auto
+      right: -55px
+  .examples-list__shop
+    .picture
+      margin-left: 15px
   .examples-list__mobile
     .picture
-      width: 70%
-      height: 275px
+      height: 305px
+      margin-left: 50px
+  .examples-list__logo .picture
+    margin-left: 40px
+  .examples-list__style .picture
+    margin-left: 40px
+
+
+  .features-item
+    margin-left: 0
+  .features-item__picture
+    margin-right: 50px
 
 
   .scheme__lg
@@ -58,6 +75,10 @@
     top: 33px
   .banner .h1
     margin-top: 70px
+  .banner__pic
+    width: 74%
+    bottom: 86px
+
 
 
   .services__top-box
@@ -77,13 +98,59 @@
     margin-bottom: 20px
 
 
-  .examples-list__full
+
+  .examples-list__item
+    width: 100%
+  .examples-list__corporate
     .picture
-      width: 50%
-  .examples-list__shop .picture
-    margin-top: -76px
-  .examples-list__mobile .picture
-    height: 198px
+      position: relative
+      left: auto
+      bottom: auto
+      margin: 0 auto 0
+  .examples-list__landing .picture
+    margin: -30px auto 44px
+
+  .examples-list__full
+    flex-direction: column
+    height: 700px
+    padding-left: 0
+    justify-content: center
+    padding-top: 0
+    .examples-list__text
+      width: 70%
+      margin: -30px auto 0
+      text-align: center
+      order: 2
+    .picture
+      position: relative
+      order: 1
+      height: 450px
+      width: 80%
+      margin-left: 30px
+  .examples-list__shop
+    padding: 0
+    .picture
+      margin: -20px auto 50px
+  .examples-list__mobile
+    height: 670px
+    .picture
+      height: auto
+      margin: -17px auto 0
+  .examples-list__logo
+    .picture
+      margin: 60px auto 40px
+  .examples-list__style .picture
+    margin: 0 auto
+
+
+  .features-item
+    width: 100%
+    height: 800px
+  .features-item__picture
+    max-width: 50%
+    height: 700px
+  .features-slider .slick-dots
+    left: -145px
 
 
   .steps
@@ -145,42 +212,92 @@
   .main-line__phone
     margin-right: 0
 
+
+  .banner
+    background-size: 100% 90%
+  .banner__inner
+    height: 500px
+
   .banner__pic
-    width: 70%
     right: 0
+    bottom: 13px
 
 
   .services .banner__pic
-    width: 60%
+    width: 65%
   .services .banner__inner
     padding-left: 30px
+  .services .banner__text
+    justify-content: flex-start
 
 
   .examples-list
-    flex-direction: column
     margin-top: 30px
-  .examples-list__item
-    width: 100%
-    height: auto
-    .picture
-      margin: 0
-
-
-  .services
-    padding: 70px 0
-  .examples-list__pic-bottom .picture
-    margin-bottom: 0
+  .examples-list__corporate
+    padding-top: 40px
+    height: 600px
+  .examples-list__landing
+    height: 600px
   .examples-list__full
-    flex-direction: column
-    height: auto
-    padding-top: 40px
-    .examples-list__text
-      width: 100%
+    padding-top: 0
+    align-items: center
+    justify-content: center
+    padding-bottom: 40px
+    height: 600px
     .picture
-      width: 100%
-
-  .examples-list__pic-bottom
+      margin-left: -100px
+      height: 346px
+      width: 71%
+  .examples-list__shop
+    height: 650px
+  .examples-list__mobile
     padding-top: 40px
+    height: 600px
+  .examples-list__logo
+    height: 630px
+  .examples-list__style
+    padding-top: 40px
+    height: 600px
+
+
+
+
+  //.services
+  //  padding: 70px 0
+  //.examples-list__pic-bottom .picture
+  //  margin-bottom: 0
+  //.examples-list__full
+  //  flex-direction: column
+  //  height: auto
+  //  padding-top: 40px
+  //  padding-left: 0
+  //  .examples-list__text
+  //    width: 80%
+  //    margin: 0 auto
+  //    text-align: center
+  //  .picture
+  //    width: 100%
+  //
+  //.examples-list__pic-bottom
+  //  padding-top: 40px
+
+  .portfolio-slider .slick-slide img
+    max-width: 600px
+    max-height: 590px
+
+
+  .features-slider
+    margin-bottom: 0
+  .features-slider .slick-dots
+    left: -198px
+  .features-item
+    height: 700px
+    overflow: hidden
+  .features-item__picture
+    height: 600px
+    margin-right: 20px
+  .features-item__description
+    width: 40%
 
 
   .steps
@@ -218,8 +335,36 @@
 // ≥576px
 +media-breakpoint-down(xs)
 
-  .banner__pic
+  .features
+    padding: 70px 0
+  .features .section-heading
+    margin-left: 0
+    text-align: left
+  .features-item
+    flex-wrap: wrap
+    justify-content: flex-end
+  .features-item__picture
+    max-width: 90%
+    height: 300px
+    margin-right: 0
+    order: 2
+  .features-item__description
     width: 90%
+    margin-bottom: 20px
+  .features-item__icon
+    margin-bottom: 10px
+
+
+  .portfolio-slider .slick-slide
+    margin-left: -5px
+    margin-right: -5px
+    img
+      max-width: 400px
+      max-height: 340px
+
+
+
+
 
 
 
@@ -230,19 +375,29 @@
 @media (max-width: 480px)
 
 
+  .banner
+    background-size: 100% 94%
+  .banner__inner
+    height: 533px
+
   .banner__pic
     width: 100%
+    bottom: 0
 
   .services__circles
     flex-wrap: wrap
     justify-content: space-around
 
+
+  .features-slider .slick-dots
+    left: -40%
+
   .steps-item__description .h4
-    font-size: 20px
+    font-size: 18px
   .steps-list .steps-item
     margin-bottom: 20px
   .steps-list .steps-item__top .steps-line
-    bottom: -114px
+    bottom: -78px
 
 
   .map__card
@@ -252,10 +407,21 @@
 
 @media (max-width: 360px)
 
+  .banner__inner
+    height: 470px
+
+
+
   .services .banner__inner
     padding: 0 30px
     .btn
       width: 100%
+
+
+@media (max-width: 350px)
+  .steps-list .steps-item__top .steps-line
+    width: 379px
+    bottom: -130px
 
 
 

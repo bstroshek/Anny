@@ -48,14 +48,16 @@
     .h1
       font-size: 2.4em
       margin-top: 0
+      //margin-bottom: 0
     &__text
       align-items: flex-start
+      justify-content: center
       .accent-term
         position: relative
         right: auto
         top: auto
         display: inline-block
-        margin-top: -30px
+        //margin-top: -30px
         margin-bottom: 10px
     &__pic
       width: 45%
@@ -81,27 +83,28 @@
   &__heading
     font-family: $light-font
     font-size: 2em
-    margin-bottom: 20px
+    margin-bottom: 33px
+    line-height: 1.2
   &__description
-    margin-bottom: 15px
+    margin-bottom: 30px
   &__price
     font-size: 2em
   .picture
     text-align: center
     display: inline-block
     position: relative
-    z-index: 10
+    z-index: 0
   .item-blue
     background: #ebf4ff
   .item-pink
     background: #fff5ee
 
 
-  &__pic-bottom
+  //&__pic-bottom
     padding-top: 60px
     .picture
       margin-bottom: -25px
-  &__pic-top
+  //&__pic-top
     padding-bottom: 60px
     .picture
       margin-top: -55px
@@ -113,25 +116,63 @@
     height: 440px
     position: relative
     display: flex
-    align-items: center
     padding-left: 80px
+    padding-top: 60px
+    justify-content: space-between
     .examples-list__text
-      width: 40%
+      width: 35%
       text-align: left
+      margin: 0
     .picture
-      margin-top: -46px
+      position: absolute
+      right: 0
+      top: -57px
 
+
+  &__corporate
+    position: relative
+    height: 700px
+    padding-top: 65px
+    .picture
+      position: absolute
+      bottom: -30px
+      left: 80px
+      box-shadow: 0 0 50px rgba(187, 187, 187, 0.4)
+
+
+
+
+  &__landing
+    height: 700px
+    .picture
+      margin-bottom: 44px
+      margin-top: -30px
+      box-shadow: 0 0 60px rgba(187, 187, 187, 0.4)
 
   &__shop
     .picture
-      margin-top: -113px
+      margin-top: -40px
+      margin-bottom: 50px
   &__mobile
+    padding-top: 65px
     .picture
-      margin-top: 33px
+      margin-top: -15px
+      height: 373px
+      margin-left: 20px
+
   &__logo
     .picture
-      margin-top: 60px
+      margin-top: 35px
       margin-bottom: 40px
+    .examples-list__heading
+      margin-bottom: 45px
+    .examples-list__description
+      margin-bottom: 40px
+
+  &__style
+    padding-top: 60px
+    .picture
+      margin-top: -15px
 
 
 

@@ -78,10 +78,17 @@ input
     background: $accent
   &-blue
     background: $custom-accent
+  &-clear
+    background: transparent
+    border: 1px solid #bcbcbc
 
 
 
 .slider
+  .slick-slide
+    outline: none
+    &:focus
+      outline: none
   .slick-dots
     display: flex
     width: 40%
@@ -119,52 +126,23 @@ input
   margin-bottom: 15px
   letter-spacing: -2px
 
-h1, .h3, h3, h2
+h1, .h3, h3, h2, h4
   font-weight: normal
 
-.hamburger
-  display: inline-block
-  cursor: pointer
-  width: 30px
-  height: 24px
-  position: relative
-  span
-    width: 100%
-    height: 3px
-    background: $text
-    position: absolute
-    top: calc(50% - 1px)
-  &:before, &:after
-    content: ''
-    display: block
-    position: absolute
-    width: 100%
-    height: 3px
-    left: 0
-    background: $text
-  &:before
-    top: 0
-  &:after
-    bottom: 0
 
-.hamburger.active
-  span, &:before, &:after
-    background: $custom-accent
+  //MODAL
 
-.dropdown
-  display: none
-  position: absolute
-  text-align: left
-  background: #ffffff
-  z-index: 20
-  padding: 20px 20px
-  margin-top: 15px
-  width: 210px
-  right: 0
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.33)
-  .dropdown__link
-    display: inline-block
-    margin-bottom: 10px
+
+.form__group
+  .form-control
+    margin-bottom: 15px
+    color: $text
+    &::placeholder
+      color: $text
+
+
+
+
 
 
 
@@ -225,8 +203,41 @@ h1, .h3, h3, h2
       padding-right: 0
 
 
+.rub
+  vertical-align: baseline
 
 
 
+.slick-somth-in
+  .features-item
+    .features-item__picture
+      animation-duration: 3s
+      animation-name: slidein
+      //animation-iteration-count: infinite
 
+
+@keyframes slidein
+  from
+    margin-left: 100%
+    width: 300%
+
+
+  to
+    margin-left: 0%
+    width: 100%
+
+.slick-somth-out
+  .features-item
+    .features-item__picture
+      animation-duration: 3s
+      animation-name: slideout
+
+@keyframes slideout
+  from
+    margin-left: 0%
+    width: 100%
+
+  to
+    margin-left: 100%
+    width: 300%
 
